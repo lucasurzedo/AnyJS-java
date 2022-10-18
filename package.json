@@ -1,0 +1,19 @@
+{
+  "name": "anyjs-java",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "bson": "^4.2.3",
+    "mongoose": "^5.12.1",
+    "nodejs-file-downloader": "^4.5.3",
+    "valid-url": "^1.0.9",
+    "java": "git+https://github.com/lucasurzedo/node-java.git"
+  }
+}
