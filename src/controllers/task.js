@@ -1,9 +1,17 @@
 const mongoose = require('mongoose');
 const fs = require('fs');
+const java = require('java');
 
 const ModelTask = require('../models/task');
 const utils = require('../utils/index');
 const db = require('../db');
+
+java.asyncOptions = {
+  asyncSuffix: undefined,
+  syncSuffix: '',
+  promiseSuffix: 'Promise',
+  promisify: require('util').promisify,
+};
 
 async function executeJavaMethod(parameters) {
   const {
@@ -79,8 +87,6 @@ async function executeLocalBatch(req, res) {
   const {
     language,
   } = req.params;
-
-  console.log(req.body);
 
   const collectionName = (`${code}_task`).toLowerCase();
 
