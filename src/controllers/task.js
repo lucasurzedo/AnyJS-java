@@ -88,6 +88,8 @@ async function executeLocalBatch(req, res) {
     language,
   } = req.params;
 
+  console.log(methodArgs);
+
   const collectionName = (`${code}_task`).toLowerCase();
 
   const Task = mongoose.model(collectionName, ModelTask, collectionName);
