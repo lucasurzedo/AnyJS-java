@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes');
 
 const app = express();
-const port = 4445;
+const port = 4545;
 
 async function setupApp() {
   app.use(express.json());
