@@ -18,6 +18,6 @@
     "java": "0.12.1",
     "mongoose": "^5.12.1",
     "nodejs-file-downloader": "^4.5.3",
-    "valid-url": "^1.0.9",
+    "valid-url": "^1.0.9"
   }
 }
