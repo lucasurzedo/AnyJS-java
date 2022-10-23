@@ -141,6 +141,12 @@ async function executeLocalBatch(req, res) {
     }
   }
 
+  const jsonResult = {
+    result: 'start executions',
+  };
+
+  res.status(200).send(jsonResult);
+
   for (let i = 0; i < methodArgs.length; i += 1) {
     const document = await db.getDocument(collectionName, 'executionName', `${taskNamePrefix}${i}`);
 
@@ -172,12 +178,6 @@ async function executeLocalBatch(req, res) {
       newTask.save();
     });
   }
-
-  const jsonResult = {
-    result: 'success',
-  };
-
-  res.status(200).send(jsonResult);
 }
 
 module.exports = {
