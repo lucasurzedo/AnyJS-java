@@ -167,15 +167,12 @@ async function executeLocalBatch(req, res) {
       taskResult: null,
     });
 
-    // eslint-disable-next-line no-await-in-loop
-    await newTask.save();
-
     executeJavaMethod({
       args, code, mainClassPath, method, methodArgs: methodArgs[i], language,
-    }).then((result) => {
+    }).then(async (result) => {
       console.log(result);
       newTask.taskResult = result;
-      newTask.save();
+      await newTask.save();
     });
   }
 }
